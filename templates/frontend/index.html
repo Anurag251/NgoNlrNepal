@@ -1,0 +1,150 @@
+{% extends "frontend/base.html" %} {% load static %} {% block content %}
+<div class="news-slide">
+  <input id="example" readonly />
+</div>
+<!-- banner-start -->
+{% include "frontend/includes/banner.html" %}
+<!-- banner-end -->
+
+<!-- about-start -->
+{% include "frontend/includes/about.html" %}
+<!-- about-end -->
+
+<!-- cources-start -->
+<!-- cources-end -->
+
+<!-- Our Popular Courses-start -->
+{% include "frontend/includes/popular-course.html" %}
+<!-- Our Popular Courses-end -->
+
+<!-- facilities-start -->
+<!-- <section class="bg">
+        <div class="wrapper">
+        <div class="facilities">
+            <div class="title">
+            <h4>Other fACILIties</h4>
+            <h2>fACILIties</h2>
+            </div>
+
+            <div class="list">
+            <div class="item">
+                <div class="icon">
+                <img src="./images/icons/festival.svg" alt="" />
+                </div>
+                <h3 class="name">Fest</h3>
+            </div>
+
+            <div class="item">
+                <div class="icon">
+                <img src="./images/icons/sport.svg" alt="" />
+                </div>
+                <h3 class="name">Sports</h3>
+            </div>
+
+            <div class="item">
+                <div class="icon">
+                <img src="./images/icons/bus.svg" alt="" />
+                </div>
+                <h3 class="name">Bus</h3>
+            </div>
+
+            <div class="item">
+                <div class="icon">
+                <img src="./images/icons/microscope.svg" alt="" />
+                </div>
+                <h3 class="name">Lab</h3>
+            </div>
+
+            <div class="item">
+                <div class="icon">
+                <img src="./images/icons/canteen.svg" alt="" />
+                </div>
+                <h3 class="name">Canteen</h3>
+            </div>
+
+            <div class="item">
+                <div class="icon">
+                <img src="./images/icons/festival.svg" alt="" />
+                </div>
+                <h3 class="name">Fair</h3>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section> -->
+<!-- facilities-end -->
+
+<!-- facilities-start -->
+<!-- facilities-end -->
+
+<!-- program start -->
+<section class="bg">
+  <div class="wrapper">
+    <div class="facilitiess">
+      <div class="title">
+        <h4>Ongoing Programs</h4>
+        <h2>Programs</h2>
+      </div>
+
+      <div class="list">
+        {% for program in programs %}
+        <div
+          class="item wow animate__animated animate__bounceInDown"
+          data-wow-delay="0.3s"
+        >
+          <div class="facilities-image">
+            <img src="{{program.image.url}}" alt="" />
+          </div>
+
+          <div class="details">
+            <h3 class="name">{{program.title}}</h3>
+            <p>{{program.summary}}</p>
+
+            <a href="{% url 'programdetail' program.slug %}"
+              ><button>View Details <i class="fas fa-arrow-right"></i></button
+            ></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- program end -->
+
+<!-- news-events-start -->
+{% include "frontend/includes/news-events.html" %}
+<!-- news-events-end -->
+
+<!-- testimonials-start -->
+{% include "frontend/includes/testomonials.html" %}
+<!-- testimonials-end -->
+
+<!-- gallery-start -->
+{% include "frontend/includes/gallery.html" %}
+<!-- gallery-end -->
+
+<!-- our-location-start -->
+{% include "frontend/includes/location.html" %}
+<!-- our-location-end -->
+
+<!-- partner-start -->
+{% include "frontend/includes/partner.html" %}
+<!-- partner-end -->
+{% endblock content %} {% block js %}
+<script src="{% static 'frontend/js/typed.js' %}"></script>
+<script>
+  new TypeWriter(
+    "#example",
+    {% for news in allnews %}
+    [
+    "{{ news.title }}",
+    ],
+    {% endfor %}
+    {
+      writeDelay: 150,
+      deleteDelay: 30,
+    }
+  );
+</script>
+{% endblock js %}

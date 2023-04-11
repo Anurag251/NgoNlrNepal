@@ -1,0 +1,23 @@
+{% load static %}
+{% for about in abouts|slice:1 %}
+<section>
+    <div class="wrapper">
+        <div class="about">
+            <div class="image wow animate__animated animate__bounceInLeft">
+                <div class="img" style="background-image: url({{about.image.url}})"></div>
+            </div>
+            <div class="details wow animate__animated animate__bounceInRight">
+                <h1 class="name">
+                    {{about.title|truncatewords:7}}
+                </h1>
+                <p>
+                    {{about.description|truncatewords:50}}
+                </p>
+                <a href="{% url 'about' %}">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}

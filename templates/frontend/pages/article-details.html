@@ -1,0 +1,39 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block content %}
+<div class="all-details-page">
+    <div class="wrapper">
+      <div class="blog-post">
+        <div class="image">
+          <div class="img" style="background-image: url({{article.image.url}})"></div>
+        </div>
+        <div class="details">
+          <div class="name">
+            {{article.title}}
+          </div>
+          <p class="desc">
+            {{article.description|safe}}
+          </p>
+        </div>
+      </div>
+
+      <div class="recent-post">
+        <div class="title">Recent Post</div>
+        <div class="list">
+        {% for item in recent_articles %}
+          <div class="item">
+            <div class="recent-image">
+              <div class="img" style="background-image: url({{item.image.url}})"></div>
+            </div>
+            <div class="name">
+              <a href="{% url 'articledetail' item.slug %}">
+                {{item.title|truncatewords:6}}
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% load static %}
+<section class="linear-bg">
+    <div class="wrapper">
+        <div class="cources">
+            {% for course in courses %}
+            <div class="item wow animate__animated animate__bounceInUp" data-wow-delay="0.3s">
+                <div class="icon">
+                    <img src="{{course.image.url}}" alt="icon" />
+                </div>
+                <h4 class="name">{{course.title}}</h4>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

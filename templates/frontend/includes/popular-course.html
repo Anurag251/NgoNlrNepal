@@ -1,0 +1,28 @@
+{% load static %}
+<section>
+    <div class="wrapper">
+        <div class="three-zero">
+            <div class="title">
+                <h4>Our Strategic Programmes</h4>
+                <h2>Three Zeros</h2>
+
+            </div>
+
+            <div class="list">
+                {% for pcourse in popular_courses %}
+                <div class="item wow animate__animated animate__bounceInUp" data-wow-delay="0.3s">
+                    <div class="image">
+                        <div class="img" style="background-image: url({{pcourse.image.url}})"></div>
+                    </div>
+                    <div class="text-sec">
+                        <h4 class="name">{{pcourse.title|truncatewords:6}}</h4>
+                        <h5><a href="" target="_blank">
+                                <button>Read More</button>
+                            </a></h5>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

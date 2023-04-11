@@ -1,0 +1,77 @@
+{% load static %}
+<section>
+    <div class="wrapper">
+        <div class="news-events">
+            <div class="title">
+                <h4>News & Events</h4>
+                <h2>Recent News & Events at NLR</h2>
+            </div>
+
+            <ul class="switch-btn">
+                <li class="active" data-filters="data-news">News</li>
+                <li data-filters="data-event">Events</li>
+            </ul>
+
+            <div class="list">
+                {% for news in allnews %}
+                <div class="item itemBox data-news wow animate__animated animate__bounceInRight" data-wow-delay="0.3s">
+                    <div class="image">
+                        <div class="img" style="background-image: url({{news.image.url}})"></div>
+                    </div>
+                    <div class="details">
+                        <div class="date-time">
+                            <div class="date">
+                                <div class="day">{{news.created_at|date:'D'}}</div>
+                                <div class="month">{{news.created_at|date:'M'}}</div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="time">
+                                <div class="hrs"><i class="fas fa-clock"></i> {{news.created_at|time:"H:i" }}</div>
+                                <div class="loc">
+                                    <i class="fas fa-map-marker-alt"></i> {{news.location}}
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="name">{{news.title|truncatewords:10}}</h4>
+                        <p>
+                            {{news.description|truncatewords:15}}
+                        </p>
+                        <a href="#">
+                            <button>Read More</button>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% for event in allevents %}
+                <div class="item itemBox data-event wow animate__animated animate__bounceInRight" data-wow-delay="0.3s">
+                    <div class="image">
+                        <div class="img" style="background-image: url({{event.image.url}})"></div>
+                    </div>
+                    <div class="details">
+                        <div class="date-time">
+                            <div class="date">
+                                <div class="day">{{event.event_time}}</div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="time">
+                                <div class="hrs"><i class="fas fa-clock"></i> {{event.event_date}} </div>
+                                <div class="loc">
+                                    <i class="fas fa-map-marker-alt"></i> {{event.location}}
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="name">{{event.title|truncatewords:10}}</h4>
+                        <p>
+                            {{event.description|truncatewords:15}}
+                        </p>
+                        <a href="#">
+                            <button>Read More</button>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

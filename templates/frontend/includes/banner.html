@@ -1,0 +1,38 @@
+{% load static %}
+<div class="banner">
+  <div class="enquiry">
+    <a href="{% url 'contact' %}">
+      <button>Enquiry</button>
+    </a>
+  </div>
+  <div class="side-email">
+    <div class="icon">
+      <img src="{% static 'frontend/images/icons/mail.svg' %}" alt="" />
+    </div>
+    <span> info@nlrnepal.org.np </span>
+  </div>
+  <div class="side-call">
+    <div class="icon">
+      <img src="{% static 'frontend/images/icons/phone.svg' %}" alt="" />
+    </div>
+    <span>+977-014784296</span>
+  </div>
+
+  {% for slider in sliders %}
+  <div class="banner-area" style="background-image: url({{slider.image.url}})">
+    <div class="wrapper">
+      <div class="content">
+        <h4>{{slider.subtitle}}</h4>
+        <h1>{{slider.title|truncatewords:7}}</h1>
+        <p>{{slider.description|truncatewords:15}}</p>
+
+        {% if slider.link %}
+        <a href="{{slider.link}}" class="button" target="_blank">
+          <button>Donate Now</button>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,28 @@
+{% load static %}
+<section class="bg">
+    <div class="wrapper">
+        <div class="facilitiess">
+            <div class="title">
+                <h4>Other fACILIties</h4>
+                <h2>fACILIties</h2>
+            </div>
+
+            <div class="list">
+                {% for item in facilities %}
+                <div class="item wow animate__animated animate__bounceInDown" data-wow-delay="0.3s">
+                    <div class="details">
+                        <div class="icon">
+                            <img class="dark-icon" src="{{item.image.url}}" alt="" />
+                            <img src="{{item.image.url}}" class="light-icon" alt="" />
+                        </div>
+                        <h3 class="name">{{item.title}}</h3>
+                        <p>
+                            {{item.description|truncatewords:20}}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

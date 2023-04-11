@@ -1,0 +1,107 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block content %}
+<!-- page-banner-start -->
+<div class="page-banner" style="background-image: url({% static 'frontend/images/img/page-banner.jpeg' %})">
+  <div class="enquiry">
+    <a href="{% url 'contact' %}">
+      <button>Enquiry</button>
+    </a>
+  </div>
+  <a href="mailto:info@nlrnepal.org.np">
+  <div class="side-email">
+    <div class="icon">
+      <img src="{% static 'frontend/images/icons/mail.svg' %}" alt="" />
+    </div>
+    <span> info@nlrnepal.org.np </span>
+  </div>
+  </a>
+
+  <a href="tel:+977-014784296">
+  <div class="side-call">
+    <div class="icon">
+      <img src="{% static 'frontend/images/icons/phone.svg' %}" alt="" />
+    </div>
+    <span>+977-014784296</span>
+  </div>
+  </a>
+  <div class="page-title">
+    <h1>About</h1>
+    <h6>
+      <a href="/"> Home</a>
+      <i class="fas fa-chevron-right"></i> History
+    </h6>
+  </div>
+</div>
+<!-- page-banner-end -->
+
+<!-- download-start -->
+<section>
+    <div class="wrapper">
+        <div class="download">
+            <div class="list">
+                {% for item in reports %}
+                <div>
+                    <div class="item">
+                        {% if item.image %}
+                        <div class="image">
+                            <div class="img" style="background-image: url({{item.image.url}})"></div>
+                        </div>
+                        {% else %}
+                        <div class="image">
+                            <div class="img" style="background-image: url({% static 'frontend/images/Report.png' %})"></div>
+                        </div>
+                        {% endif %}
+                        <div class="details">
+                            <h3 class="name">{{item.title}}</h3>
+                        </div>
+                        <a href="{{item.files.url}}" download="{{item.files.url}}">
+                            <button>Download</button>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="btn">
+                <button class="load-more-btn">Load More</button>
+              </div>
+        </div>
+    </div>
+</section>
+<!-- download-end -->
+
+<script>
+    const productComment = document.querySelector(".download");
+
+    if (productComment) {
+      const comments = document.querySelectorAll(".download .item");
+      const loadMoreBtn = document.querySelector(".download .load-more-btn");
+      let noOfItems = 8;
+
+      const loadComment = () => {
+        comments.forEach((comment, idx) => {
+          if (idx < noOfItems) {
+            comment.classList.add("active");
+          } else {
+            comment.classList.remove("active");
+          }
+        });
+      };
+      loadComment();
+
+      loadMoreBtn.addEventListener("click", () => {
+        loadComment();
+
+        if (comments.length <= noOfItems) {
+          loadMoreBtn.innerHTML = "Load Less";
+          noOfItems = 8;
+        } else {
+          loadMoreBtn.innerHTML = "Load More";
+          noOfItems += 1;
+        }
+      });
+    }
+  </script>
+
+{% endblock content %}

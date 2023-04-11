@@ -1,0 +1,264 @@
+{% extends "frontend/base.html" %} {% load static %} {% block content %}
+<!-- page-banner-start -->
+<div
+  class="page-banner"
+  style="background-image: url({% static 'frontend/images/contactus.jpg' %})"
+>
+  <div class="page-title">
+    <h1>Contact</h1>
+    <h6>
+      <a href="/"> Home</a>
+      <i class="fas fa-chevron-right"></i> Contact
+    </h6>
+  </div>
+</div>
+<!-- page-banner-end -->
+
+<!-- contact-page-start -->
+<section>
+  <div class="wrapper">
+    <div class="contact-page">
+      <div class="contact-info">
+        <div class="title">Contact Info</div>
+        <div class="contact-information-list">
+          <div class="contact-item">
+            <div class="list">
+              <div class="name">REGISTERED OFFICE</div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/location_outline.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <p>Sankhamul Marg, New Baneshwor-10, Kathmandu, Nepal</p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/mail_open.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <p>info@nlrnepal.org.np</p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/phone-orange.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+
+                  <p>+977-1-4784296</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="list">
+              <div class="name">PROVINCE 1 FIELD OFFICE</div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/location_outline.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <p>Biratnagar Metropolitian CityWard No. 3 P.O. Box. 134</p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/mail_open.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <p>info@nlrnepal.org.np</p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/phone-orange.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <p>+021-461130</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="list">
+              <div class="name">SUDUR PASCHIM PROVINCE FIELD OFFICE</div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/location_outline.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <p>
+                    Dhangadhi Sub-Metropolitan City, Ward No. 5 P.O. Box. 35
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/mail_open.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <p>info@nlrnepal.org.np</p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/phone-orange.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <p>+091-522499</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="list">
+              <div class="name">PROJECT OFFICE PEP++</div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/location_outline.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <p>Bardibas, Mahottari</p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/mail_open.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <p>info@nlrnepal.org.np</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="list">
+              <div class="name">PROJECT FIELD OFFICE PEP++</div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/location_outline.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <p>Janakpur, Dhanusha</p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img
+                    src="{% static 'frontend/images/icons/mail_open.svg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="details">
+                  <p>info@nlrnepal.org.np</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="title">Get In Touch</div>
+        <form action="{% url 'contact' %}" method="POST">
+          {% csrf_token %}
+          <div class="groups">
+            <div class="group">
+              <label for="YourName">Name</label>
+              <input type="text" id="YourName" name="name" required />
+            </div>
+
+            <div class="group">
+              <label for="YourEmail">Email</label>
+              <input type="email" id="YourEmail" name="email" required />
+            </div>
+          </div>
+
+          <div class="group">
+            <label for="Subj">Subject</label>
+            <input type="text" id="Subj" name="subject" required />
+          </div>
+
+          <div class="group">
+            <label for="Mess">Message</label>
+            <textarea id="Mess" name="message" required></textarea>
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- contact-page-end -->
+
+{% endblock content %} {% block js %}
+<script>
+  var swiper = new Swiper(".contact-page .mySwiper", {
+    slidesPerView: 1,
+    direction: "vertical",
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+{% endblock js %}

@@ -1,0 +1,23 @@
+{% load static %}
+<div class="wrapper wow animate__animated animate__bounceInUp">
+    <div class="partner">
+        <div class="title">
+            <h4>Our Partners</h4>
+            <h2>Our internship and placement partners</h2>
+        </div>
+
+        <div class="client-logo">
+            <div class="swiper-container mySwiper">
+                <div class="swiper-wrapper">
+                    {% for partner in partners %}
+                    <div class="swiper-slide">
+                        <div class="image">
+                            <img src="{{partner.image.url}}" alt="{{partner.name}}" />
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

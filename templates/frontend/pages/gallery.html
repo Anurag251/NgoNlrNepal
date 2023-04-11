@@ -1,0 +1,115 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block content %}
+  <!-- gallery-start -->
+  <section class="wow animate__animated animate__bounceInUp">
+    <div class="gallery grid-gallery">
+      <div class="title">
+        <h4>GALLERY</h4>
+        <h2>NLR NGO Gallery</h2>
+      </div>
+
+      <ul class="switch-btn">
+        <li class="active" data-filters="data-image">Images</li>
+        <li data-filters="data-video">Videos</li>
+      </ul>
+
+      <div class="images-list galleryBox data-image">
+        {% for item in imagecategory %}
+        <div class="item">
+          <div class="image" style="background-image: url( {{item.image.url}} )"></div>
+          <div id="galleryBtn" class="name">{{item.title}}
+          </div>
+        </div>
+        <div class="gallery-popup">
+          <div class="gallery-bg"></div>
+          <div class="close-gallery-btn">
+            <img src="{% static 'frontend/images/icons/close_big_light.svg' %}" alt="" />
+          </div>
+          <div class="title">{{item.title}}</div>
+          <div class="gallery-images">
+            <div class="swiper-container mySwiper">
+              <div class="swiper-wrapper">
+                {% for i in item.imagegallery_set.all %}
+                  <div class="swiper-slide" style="background-image: url({{i.image.url}})"></div>
+                {% endfor %}
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <div class="images-list galleryBox data-video">
+          <div class="item-video">
+            {% for v in videos %}
+            <video controls>
+              <source
+              src="{{v.link}}"
+              />
+            </video>
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- gallery-end -->
+
+
+  <script>
+    // gallery-popup
+    var swiper = new Swiper(".gallery-popup .mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      centeredSlides: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+  </script>
+
+  <script>
+    // gallery
+    $(document).ready(function () {
+      $(".galleryBox").not(".data-image").hide("1000");
+    });
+
+    $(document).ready(function () {
+      $(".gallery ul li").click(function () {
+        const value = $(this).attr("data-filters");
+        $(".galleryBox")
+          .not("." + value)
+          .hide("1000");
+        $(".galleryBox")
+          .filter("." + value)
+          .show("1000");
+      });
+
+      $(".gallery ul li").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+      });
+    });
+  </script>
+
+{% endblock content %}

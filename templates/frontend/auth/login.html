@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- css -->
+  <link rel="stylesheet" href="{% static 'frontend/css/styles.css' %}" />
+
+  <!-- responsive -->
+  <link rel="stylesheet" href="{% static 'frontend/css/responsive.css' %}" />
+
+  <!-- swiper -->
+  <link rel="stylesheet" href="{% static 'frontend/css/swiper.min.css' %}" />
+
+  <!-- animation -->
+  <link rel="stylesheet" href="{% static 'frontend/css/animate.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <!-- jquery -->
+  <script src="{% static 'frontend/js/jquery.js' %}"></script>
+  <title>NLR NEPAL Login</title>
+</head>
+
+<body>
+  <div class="login-page" style="background-image: url({% static 'frontend/images/img/login-bg.jpg' %})">
+    <div class="login">
+      <a href="/">
+        <div class="back-btn">
+            <img src="{% static 'frontend/images/icons/go-back.svg' %}" alt="" />
+          </div>
+      </a>
+      <a href="/">
+        <div class="logo">
+          <img src="{% static 'frontend/images/logo/ngo-logo.png' %}" alt="" />
+        </div>
+      </a>
+      <div class="icon">
+        <img src="{% static 'frontend/images/icons/user.svg' %}" alt="" />
+      </div>
+      <h3>Login</h3>
+      <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <div class="group">
+          <input type="text" name="username" class="form-input" onchange="getData(this)" required />
+          <label name="Username" class="form-input-label">Username</label>
+        </div>
+
+        <div class="group">
+          <input type="password" name="password" class="form-input" onchange="getData(this)" required />
+          <label name="password" class="form-input-label">Password</label>
+        </div>
+
+        <!-- <a href="#">
+          <h6>Forgot yout password?</h6>
+        </a> -->
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- js -->
+  <script src="{% static 'frontend/js/login.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'frontend/css/styles.css' %}" />
+
+    <!-- responsive -->
+    <link rel="stylesheet" href="{% static 'frontend/css/responsive.css' %}" />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="{% static 'frontend/css/swiper.min.css' %}" />
+
+    <!-- animation -->
+    <!-- <link rel="stylesheet" href="{% static 'frontend/css/animate.css' %}" /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    /> -->
+
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <!-- jquery -->
+    <script src="{% static 'frontend/js/jquery.js' %}"></script>
+    <title>NLR NEPAL</title>
+  </head>
+
+  <div class="page-loading"></div>
+
+  <body>
+    <!-- header-start -->
+    <header>
+      <div class="desktop-nav">
+        <div class="navbar">
+          <div class="main-sec">
+            <a href="/">
+              <div class="logo">
+                <img
+                  src="{% static 'frontend/images/logo/ngo-logo.png' %}"
+                  alt=""
+                />
+              </div>
+            </a>
+
+            <ul class="nav-links">
+              <li>
+                <button class="nav-link">
+                  About Us <i class="fas fa-chevron-down"></i>
+                </button>
+
+                <ul class="drop">
+                  <li>
+                    <a href="{% url 'about' %}">
+                      <button>What is Leprosy</button>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="{% url 'about' %}">
+                      <button>History</button>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="{% url 'msg' %}">
+                      <button>Message from Director</button>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="{% url 'mission' %}">
+                      <button>Vision, Mission & Strategy</button>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="{% url 'key' %}">
+                      <button>Key Achievements</button>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="{% url 'partner' %}">
+                      <button>Collaborating Partners</button>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="{% url 'outcome' %}">
+                      <button>Outcomes</button>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <button class="nav-link">
+                  Programs <i class="fas fa-chevron-down"></i>
+                </button>
+
+                <ul class="drop">
+                  <li>
+                    <a href="{% url 'ongoingprogram' %}">
+                      <button>Ongoing Programs</button>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="{% url 'completedprogram' %}">
+                      <button>Completed Programs</button>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <button class="nav-link">
+                  Media & Communication <i class="fas fa-chevron-down"></i>
+                </button>
+
+                <ul class="drop">
+                  <li>
+                    <a href="{% url 'events' %}">
+                      <button>Events</button>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="{% url 'reports' %}">
+                      <button>Annual Reports</button>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="{% url 'articles' %}">
+                      <button>Article</button>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="{% url 'news' %}">
+                      <button>News</button>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="{% url 'teams' %}">
+                  <button class="nav-link">Team</button>
+                </a>
+              </li>
+
+              <li>
+                <a href="{% url 'boards' %}">
+                  <button class="nav-link">Board</button>
+                </a>
+              </li>
+
+              <li>
+                <a href="{% url 'boards' %}">
+                  <button class="nav-link">Stake Holder</button>
+                </a>
+              </li>
+
+              <li>
+                <a href="{% url 'gallery' %}">
+                  <button class="nav-link">Gallery</button>
+                </a>
+              </li>
+
+              <li>
+                <a href="{% url 'archives' %}">
+                  <button class="nav-link">Archive</button>
+                </a>
+              </li>
+
+              <li>
+                <a href="{% url 'contact' %}">
+                  <button class="nav-link">Contact Us</button>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="other-sec">
+            <!-- <div class="social-links">
+              <a href="#">
+                <button class="links">
+                  <i class="fab fa-linkedin"></i>
+                </button>
+              </a>
+
+              <a href="#">
+                <button class="links">
+                  <i class="fab fa-facebook"></i>
+                </button>
+              </a>
+
+              <a href="#">
+                <button class="links">
+                  <i class="fab fa-twitter"></i>
+                </button>
+              </a>
+
+              <a href="#">
+                <button class="links">
+                  <i class="fab fa-instagram"></i>
+                </button>
+              </a>
+            </div> -->
+
+            <div class="language-switch">
+              <div id="google_translate_element"></div>
+            </div>
+
+            <!-- <a href="/admin">
+              <div class="login">
+                <button>Login</button>
+              </div>
+            </a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-header">
+        <div class="wrapper">
+          <div class="logo">
+            <img
+              src="{% static 'frontend/images/logo/ngo-logo.png' %}"
+              alt=""
+            />
+          </div>
+          <div class="side-nav-btn">
+            <div class="bars"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- header-end -->
+
+    <div class="side-nav">
+      <div class="side-nav-logo">
+        <div class="logo">
+          <img src="{% static 'frontend/images/logo/ngo-logo.png' %}" alt="" />
+        </div>
+        <div class="side-nav-close-btn">
+          <img
+            src="{% static 'frontend/images/icons/close_big_light.svg' %}"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <ul class="side-nav-bar">
+        <a href="/">
+          <li>Home</li>
+        </a>
+
+        <li class="side-nav-drop-btn">
+          <span>About Us <i class="fas fa-chevron-down"></i></span>
+
+          <ul class="side-nav-drop">
+            <a href="{% url 'about' %}">
+              <li>History</li>
+            </a>
+
+            <a href="{% url 'msg' %}">
+              <li>Message from Director</li>
+            </a>
+
+            <a href="{% url 'mission' %}">
+              <li>Vision, Mission & Strategy</li>
+            </a>
+
+            <a href="{% url 'key' %}">
+              <li>Key Achievements</li>
+            </a>
+
+            <a href="{% url 'partner' %}">
+              <li>Collaborating Partners</li>
+            </a>
+
+            <a href="{% url 'outcome' %}">
+              <li>Outcomes</li>
+            </a>
+          </ul>
+        </li>
+
+        <li class="side-nav-drop-btn">
+          <span>Programs <i class="fas fa-chevron-down"></i></span>
+
+          <ul class="side-nav-drop">
+            <a href="{% url 'ongoingprogram' %}">
+              <li>Ongoing Programs</li>
+            </a>
+
+            <a href="{% url 'completedprogram' %}">
+              <li>Completed Programs</li>
+            </a>
+          </ul>
+        </li>
+
+        <li class="side-nav-drop-btn">
+          <span>
+            Media & Communication <i class="fas fa-chevron-down"></i>
+          </span>
+
+          <ul class="side-nav-drop">
+            <a href="{% url 'events' %}">
+              <li>Events</li>
+            </a>
+
+            <a href="{% url 'reports' %}">
+              <li>Annual Reports</li>
+            </a>
+
+            <a href="{% url 'articles' %}">
+              <li>Article</li>
+            </a>
+
+            <a href="{% url 'news' %}">
+              <li>News</li>
+            </a>
+          </ul>
+        </li>
+
+        <a href="{% url 'teams' %}">
+          <li>Team</li>
+        </a>
+
+        <a href="{% url 'boards' %}">
+          <li>Board</li>
+        </a>
+
+        <a href="{% url 'gallery' %}">
+          <li>Gallery</li>
+        </a>
+
+        <a href="{% url 'archives' %}">
+          <li>Archive</li>
+        </a>
+
+        <a href="{% url 'contact' %}">
+          <li>Contact Us</li>
+        </a>
+
+        <div class="language-switch">
+          <div id="google_translate_element"></div>
+        </div>
+      </ul>
+    </div>
+
+    <div class="background">
+      <img
+        class="cursor-close"
+        src="{% static 'frontend/images/icons/shadow-close.svg' %}"
+        alt=""
+      />
+    </div>
+
+    <div class="background">
+      <img
+        alt=""
+        class="cursor-close"
+        src="{% static 'frontend/images/icons/shadow-close.svg' %}"
+      />
+    </div>
+    <!-- enquiry-form-popup-start -->
+
+    <div class="enquiry-form-popup">
+      <div class="close-form">
+        <img alt="" src="{% static 'frontend/images/icons/close_big.svg' %}" />
+      </div>
+
+      <div class="title">
+        <h3>Please Donate Us</h3>
+      </div>
+
+      <form method="POST">
+        {% csrf_token %}
+        <div class="details">
+          <h4><span>Bank Details:</span></h4>
+
+          <h5><span>Account Number: 9876543210</span></h5>
+
+          <h5><span>Bank Name: Everest Bank Limited</span></h5>
+
+          <h4><span>Digital Wallet:</span></h4>
+
+          <h5><span>Esewa Id: 9876543210</span></h5>
+
+          <h5><span>Khalti Id: 9876543210</span></h5>
+        </div>
+
+        <p class="note">
+          If you have already donated us, kindly provide your receipt and name.
+        </p>
+
+        <div class="group">
+          <label for="name">Full Name *</label>
+          <input id="name" name="fullname" required="" type="text" />
+        </div>
+
+        <div class="group">
+          <label for="Number">Mobile Number *</label>
+          <input id="Number" name="number" required="" type="number" />
+        </div>
+
+        <div class="group">
+          <label for="email">Email</label>
+          <input id="email" name="email" required="" type="email" />
+        </div>
+
+        <div class="group">
+          <label for="recepit">Recepit Image</label>
+          <input id="recepit" name="receipt" required="" type="file" />
+        </div>
+        <button type="submit">Donate</button>
+      </form>
+    </div>
+
+    <div class="donate-to-nlr" id="donate-to-nlr">
+      <button class="donate-to-nlr-btn" id="donate-to-nlr-btn">
+        Donate To NLR
+      </button>
+    </div>
+    <!-- enquiry-form-popup-end -->
+
+    {% block content %} {% endblock content %}
+    <!-- footer-start -->
+    <footer>
+      <div class="wrapper">
+        <div class="list">
+          <div class="item">
+            <h3>CONTACT</h3>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Sankhamul, Kathmandu,
+                Nepal
+              </li>
+              <li><i class="fas fa-phone-alt"></i> +977-014784296</li>
+              <li><i class="fas fa-envelope"></i> info@nlrnepal.org.np</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h3>Quick Links</h3>
+            <ul>
+              <a href="about-us.html" target="_blank">
+                <li>NLR History</li>
+              </a>
+              <a href="Vision, Mission & Strategy.html" target="_blank">
+                <li>Vision, Mission and Strategy</li>
+              </a>
+              <a href="ongoing-programs.html" target="_blank">
+                <li>Ongoing Program</li>
+              </a>
+              <a href="completed-programs.html" target="_blank">
+                <li>Completed Program</li>
+              </a>
+              <a href="our-teams.html" target="_blank">
+                <li>Team</li>
+              </a>
+              <a href="gallery.html" target="_blank">
+                <li>Gallery</li>
+              </a>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h3>International Links</h3>
+            <ul>
+              <a href="https://nlrinternational.org/" target="_blank">
+                <li>NLR International</li></a
+              >
+              <a href="https://www.nlrindia.co.in/" target="_blank">
+                <li>NLR India</li></a
+              >
+              <a href="https://nlrindonesia.or.id/" target="_blank">
+                <li>NLR Indonesia</li></a
+              >
+              <a href="http://www.nlrmoz.org/" target="_blank">
+                <li>NLR Mozambique</li></a
+              >
+              <a href="https://www.nhrbrasil.org.br/" target="_blank">
+                <li>NLR Brazil</li></a
+              >
+            </ul>
+          </div>
+
+          <div class="item">
+            <h3>Newsletter</h3>
+            <div class="details">
+              <p>You can trust us. we only send promo offers,</p>
+              <div class="group">
+                <form action="">
+                  <input
+                    type="email"
+                    placeholder="Your Email Address"
+                    required
+                  />
+                  <button>
+                    <img
+                      src="{% static 'frontend/images/icons/send-button.svg' %}"
+                      alt=""
+                    />
+                  </button>
+                </form>
+              </div>
+
+              <br />
+            </div>
+            <img
+              src="{% static 'frontend/images/Screenshot-2019-05-27-at-15.12.07-480x432.png' %}"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© copyright 2022 NLR Nepal.</div>
+    </footer>
+    <!-- footer-end -->
+
+    <!-- mobile-navigate-btns-start -->
+    <div class="mobile-navigate-btns">
+      <div class="icon">
+        <a href="/">
+          <img src="{% static 'frontend/images/icons/home.svg' %}" alt="Home" />
+        </a>
+      </div>
+
+      <div class="icon" id="admission-btn">
+        <img
+          src="{% static 'frontend/images/icons/admission.svg' %}"
+          alt="imageicon"
+        />
+      </div>
+
+      <div class="icon" id="enquiry">
+        <img
+          src="{% static 'frontend/images/icons/speech-bubble-with-question-mark.svg' %}"
+          alt="Enquiry"
+        />
+      </div>
+    </div>
+    <!-- mobile-navigate-btns-end -->
+
+    <!-- js -->
+    <script src="{% static 'frontend/js/nav.js' %}"></script>
+    <script src="{% static 'frontend/js/enquiry.js' %}"></script>
+    <script src="{% static 'frontend/js/gallery.js' %}"></script>
+
+    {% block js %} {% endblock js %}
+
+    <!-- <script src="{% static 'frontend/js/wow.min.js' %}"></script> -->
+
+    <!-- <script>
+      new WOW().init();
+    </script> -->
+
+    <!-- swiper -->
+    <script src="{% static 'frontend/js/swiper.min.js' %}"></script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "np" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script>
+      // banner
+      var swiper = new Swiper(".banner .mySwiper", {
+        autoplay: {
+          delay: 8000,
+        },
+      });
+
+      // testimonials
+      var swiper = new Swiper(".testimonials .mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        centeredSlides: true,
+        autoplay: {
+          delay: 3000,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 5,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 5,
+          },
+          1150: {
+            slidesPerView: 3,
+            spaceBetween: 5,
+          },
+        },
+      });
+
+      // partner
+      var swiper = new Swiper(".partner .mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+
+        autoplay: {
+          delay: 3000,
+        },
+
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        },
+      });
+
+      // gallery-popup
+      var swiper = new Swiper(".gallery-popup .mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        centeredSlides: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+    </script>
+
+    <script>
+      // news-events
+      $(document).ready(function () {
+        $(".itemBox").not(".data-news").hide("1000");
+      });
+
+      $(document).ready(function () {
+        $(".news-events ul li").click(function () {
+          const value = $(this).attr("data-filters");
+          $(".itemBox")
+            .not("." + value)
+            .hide("1000");
+          $(".itemBox")
+            .filter("." + value)
+            .show("1000");
+        });
+
+        $(".news-events ul li").click(function () {
+          $(this).addClass("active").siblings().removeClass("active");
+        });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    {% load sweetify %} {% sweetify %}
+  </body>
+</html>

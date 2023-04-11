@@ -1,0 +1,630 @@
+$main: #EA560C
+$pri: #6B195A
+$sec: #fbb016
+$bg: #f9f9ff
+$title: #373737
+$light: #ffffff
+$dark: #000000
+$para: #484848
+
+@mixin flex($justify)
+  display: flex
+  justify-content: $justify
+  align-items: center
+
+@mixin grid($column)
+  display: grid
+  grid-template-columns: $column
+  grid-gap: 20px
+
+@mixin dark($opacity)
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: rgba($dark, $opacity)
+
+@mixin image
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+
+@mixin trans()
+  transition: 0.45s cubic-bezier(0, 0, 0, 1),
+
+@mixin button($color)
+  padding: 0.5rem 1rem
+  background: none
+  color: $light
+  border: 1px solid $color
+  box-shadow: 0 0 0 3em $color inset
+  @include trans()
+  cursor: pointer
+
+  &:hover
+    box-shadow: 0 0 0 0em $color inset
+    color: $color
+
+@media only screen and (max-width: 1200px)
+  .wrapper
+    max-width: 1000px
+
+  /*********************      header      ***********************/
+  header
+    .wrapper
+      max-width: 1200px
+
+  /*********************      about      ***********************/
+  .about
+    @include grid($column: 1fr 1fr)
+
+  /*********************      three-zero      ***********************/
+  .three-zero
+    .list
+      @include grid($column: 1fr 1fr 1fr)
+
+      .item
+        margin-bottom: 1rem
+
+  /*********************      chairman      ***********************/
+  .chairman
+    @include grid($column: 1fr 1fr)
+
+  /*********************      teams      ***********************/
+  .teams
+    .list
+      &.list-grid
+        @include grid($column: 1fr 1fr 1fr)
+
+  /*********************      blog      ***********************/
+  .blog
+    .list
+      @include grid($column: 1fr 1fr)
+
+  /*********************      faculty      ***********************/
+  .faculty
+    .list
+      @include grid($column: 1fr 1fr 1fr)
+
+  /*********************      services      ***********************/
+  .services
+    .list
+      @include grid($column: 1fr 1fr)
+
+  /*********************      download      ***********************/
+  .download
+    .list
+      @include grid($column: 1fr 1fr 1fr)
+
+@media only screen and (max-width: 1080px)
+  .desktop-nav, .enquiry, .side-email, .side-call
+    display: none
+
+  .admission-open
+    .admission-btn
+      display: none
+
+  .mobile-header, .side-nav
+    display: block
+
+  .mobile-navigate-btns
+    display: flex
+
+@media only screen and (max-width: 1000px)
+  h1
+    font-size: 30px
+
+  h2
+    font-size: 24px
+
+  h3
+    font-size: 18px
+
+  h4
+    font-size: 16px
+
+  .wrapper
+    max-width: 800px
+
+  /*********************      banner      ***********************/
+  .banner
+    position: relative
+
+    .swiper-slide
+      height: 60vh
+
+  /*********************      about      ***********************/
+  .about
+    @include grid($column: 1fr)
+
+    .image
+      height: 400px
+
+  /*********************      three-zero      ***********************/
+  .three-zero
+    .list
+      @include grid($column: 1fr 1fr)
+
+  /************************   facilities  ************************/ 
+  .facilitiess
+    .list
+      @include grid($column: 1fr 1fr)
+
+  /*********************      news-events      ***********************/
+  .news-events
+    .list
+      @include grid($column: 1fr)
+
+  /*********************      footer      ***********************/
+  footer
+    .list
+      @include grid($column: 1.5fr 1fr 1fr)
+
+  /*********************      about-page      ***********************/
+  .about-page
+    @include grid($column: 1fr)
+    grid-gap: 0
+
+    .details
+      p
+        margin-bottom: 0
+
+      &:nth-last-child(1)
+        padding: 0
+        grid-column: 1
+
+  /*********************      learning-approaches & core-comperencies      ***********************/
+  .learning-approaches, .core-comperencies
+    .list
+      @include grid($column: 1fr 1fr 1fr)
+
+  /*********************      chairman      ***********************/
+  .chairman
+    @include grid($column: 1fr)
+
+    .image
+      grid-area: 1
+      height: 700px
+
+  /*********************      teams      ***********************/
+  .teams
+    .list
+      &.list-grid
+        @include grid($column: 1fr 1fr)
+
+        .item
+          .image
+            height: 400px
+
+  /*********************      services      ***********************/
+  .services
+    .group
+      @include grid($column: 1fr)
+
+      .image
+        width: 200px
+
+  /*********************      about-bba & about-mba      ***********************/
+  .about-bba, .about-mba
+    .list
+      .item
+        @include grid($column: 1fr)
+
+        .image
+          height: 400px
+
+  /*********************      bba-course-fee & mba-course-fee      ***********************/
+  .bba-course-fee, .mba-course-fee
+    .section
+      @include grid($column: 1fr)
+
+  /*********************      approvals      ***********************/
+  .approvals
+    .list
+      @include grid($column: 1fr 1fr)
+
+  /*********************      download      ***********************/
+  .download
+    .list
+      @include grid($column: 1fr 1fr)
+
+  /*********************      contact-page      ***********************/
+  .contact-page
+    .contact-info
+      .contact-information-list
+        @include grid($column: 1fr 1fr 1fr)
+
+  /*********************      all-details-page      ***********************/
+  .all-details-page
+
+    .wrapper
+      display: grid
+      grid-template-columns: 1fr
+
+@media only screen and (max-width: 750px)
+  /*********************      faculty      ***********************/
+  .faculty
+    .list
+      @include grid($column: 1fr 1fr)
+
+  /*********************      services      ***********************/
+  .services
+    .list
+      @include grid($column: 1fr)
+
+  /*********************      faq-page      ***********************/
+  .faq
+    .list
+      .item
+        &.active
+          .que
+            .icon
+              transform: translateY(-50%) rotate(0)
+        .que
+          position: relative
+
+          h4
+            padding-right: 3rem
+
+          .icon
+            position: absolute
+            right: 7px
+            top: 50%
+            transform: translateY(-50%) rotate(45deg)
+
+  /*********************      contact-page      ***********************/
+  .contact-page
+    .contact-info
+      .contact-information-list
+        @include grid($column: 1fr 1fr )
+
+@media only screen and (max-width: 700px)
+  /*********************      cources      ***********************/
+  .cources
+    @include grid($column: 1fr 1fr 1fr)
+
+    .item
+      margin-bottom: 1rem
+
+  /*********************      three-zero      ***********************/
+  .three-zero
+    .list
+      @include grid($column: 1fr 1fr)
+
+  /*********************      footer      ***********************/
+  footer
+    .list
+      @include grid($column: 1.5fr 1fr)
+
+      .item
+
+        &:nth-child(4)
+          grid-area: 2
+
+  /*********************      blog      ***********************/
+  .blog
+    .list
+      @include grid($column: 1fr)
+
+      .item
+        .image
+          height: 350px
+
+  /*********************      approvals      ***********************/
+  .approvals
+    .list
+      @include grid($column: 1fr)
+
+@media only screen and (max-width: 600px)
+  /*********************      cources      ***********************/
+  .cources
+    @include grid($column: 1fr 1fr)
+
+  /*********************      three-zero      ***********************/
+  .three-zero
+    .list
+      @include grid($column: 1fr)
+
+  /************************   facilities  ************************/ 
+  .facilitiess
+    .list
+      @include grid($column: 1fr)
+
+  /*********************      footer      ***********************/
+  footer
+    .list
+      @include grid($column: 1fr)
+
+      .item
+        margin-bottom: 1rem
+
+        &:nth-child(4)
+          grid-area: 2
+
+        h2
+          margin-bottom: 1rem
+
+  /*********************      page-banner      ***********************/
+  .page-banner
+    height: 400px
+
+  /*********************      teams      ***********************/
+  .teams
+    .list
+      &.list-grid
+        @include grid($column: 1fr)
+
+        .item
+          .image
+            height: 500px
+
+  /*********************      blog-details      ***********************/
+  .blog-image
+    height: 300px
+
+  .blog-details
+    .form
+      .groups
+        @include grid($column: 1fr)
+
+  /*********************      about-bba & about-mba      ***********************/
+  .about-bba, .about-mba
+    .others-details
+      .item
+        .desc
+          @include grid($column: 1fr)
+          margin-left: 0
+
+          p
+            margin-left: 0
+
+  /*********************      admission-page      ***********************/
+  .admission-page
+    .list
+      .item
+        .groups
+          @include grid($column: 1fr 1fr)
+
+  /*********************      contact-page      ***********************/
+  .contact-page
+    .contact-info
+      .contact-information-list
+        @include grid($column: 1fr )
+
+        .list
+          .name
+            font-size: 16px
+
+@media only screen and (max-width: 500px)
+  h1
+    font-size: 24px
+
+  h2
+    font-size: 20px
+
+  /*********************      cources      ***********************/
+  .cources
+    @include grid($column: 1fr)
+
+  /*********************      testimonials      ***********************/
+  .testimonials
+    .swiper-slide
+      .item
+        padding: 1.5rem
+        padding-top: 4rem
+
+        .image
+          height: 120px
+          width: 120px
+
+        .details
+          .name
+            font-size: 20px
+            line-height: 2rem
+
+          h4
+            margin-bottom: 1rem
+            font-size: 18px
+            line-height: 2rem
+
+          .desc
+            padding: 1rem 0
+            p
+              font-size: 14px
+              line-height: 1.5rem
+
+            .quet-start
+              height: 20px
+              width: 20px
+            .quet-end
+              height: 20px
+              width: 20px
+
+  /*********************      partner      ***********************/
+  .partner
+    @include grid($column: 1fr)
+
+  /*********************      footer      ***********************/
+  footer
+    .list
+      .item
+        ul
+          li
+            font-size: 15px
+
+  /*********************      learning-approaches & core-comperencies      ***********************/
+  .learning-approaches, .core-comperencies
+    .list
+      @include grid($column: 1fr 1fr)
+
+  /*********************      chairman      ***********************/
+  .chairman
+    .image
+      height: 500px
+
+  /*********************      faculty      ***********************/
+  .faculty
+    .list
+      @include grid($column: 1fr)
+
+  /*********************      about-bba & about-mba      ***********************/
+  .about-bba, .about-mba
+    .list
+      .item
+        .details
+          .name
+            font-size: 20px
+
+          p
+            font-size: 15px
+            line-height: 1.5rem
+
+          ul
+            li
+              font-size: 15px
+              line-height: 1.5rem
+
+    .others-details
+      .item
+        .name
+          font-size: 20px
+
+        p
+          margin-left: 1rem
+          font-size: 15px
+          line-height: 1.5rem
+
+  /*********************      bba-course-fee & mba-course-fee      ***********************/
+  .bba-course-fee, .mba-course-fee
+    .section
+      .details
+        .item
+          .heading
+            background-color: $pri
+            color: $light
+            padding: .7rem 1.5rem
+            font-size: 18px
+
+          p
+            padding: .7rem 1.5rem
+            font-size: 15px
+            line-height: 1.5rem
+
+  /*********************      Accreditation      ***********************/
+  .accrediation
+    .item
+      padding: 1rem
+
+      .details
+        h3
+          font-size: 18px
+
+        p
+          font-size: 15px
+          line-height: 1.5rem
+
+  /*********************      admission-page      ***********************/
+  .admission-page
+    .title
+      h2
+        font-size: 18px
+        line-height: 1.5rem
+
+    .list
+      .item
+        .groups
+          @include grid($column: 1fr)
+
+        .groups-inner
+          @include grid($column: 1fr)
+
+  /*********************      faq-page      ***********************/
+  .faq
+    .list
+      .item
+        &.active
+          .ans
+            padding: 1rem
+        .que
+          h4
+            font-size: 16px
+
+        .ans
+          p
+            font-size: 14px
+            line-height: 1.5rem
+
+  /*********************      contact-page      ***********************/
+  .contact-page
+    @include grid($column: 1fr)
+
+    .contact-info
+      .title
+        font-size: 24px
+
+    .contact-form
+      .title
+        font-size: 24px
+
+      .groups
+        @include grid($column: 1fr)
+
+  /*********************      download      ***********************/
+  .download
+    .list
+      @include grid($column: 1fr)
+
+  /*********************      all-details-page      ***********************/
+  .all-details-page
+    .details
+      .name
+        font-size: 28px
+        line-height: 2.3rem
+
+@media only screen and (max-width: 375px)
+  /*********************      chairman      ***********************/
+  .chairman
+    .image
+      height: 360px
+      .owner-details
+        left: 0
+        bottom: 0
+
+  /*********************      teams      ***********************/
+  .teams
+    .list
+      &.list-grid
+        .item
+          .image
+            height: 350px
+
+  /*********************      blog      ***********************/
+  .blog
+    .list
+      @include grid($column: 1fr)
+
+      .item
+        .image
+          height: 220px
+
+  /*********************      services      ***********************/
+  .services
+    .list
+      .item
+        margin-top: 7rem
+        padding-top: 7rem
+
+        .image
+          height: 200px
+
+  /*********************      login-page      ***********************/
+  .login-page
+    .login
+      padding: 1rem 2rem
+      .logo
+        height: 80px
+        width: 180px
+
+      .icon
+        display: none

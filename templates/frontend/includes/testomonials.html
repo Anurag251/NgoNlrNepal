@@ -1,0 +1,43 @@
+{% load static %}
+<section class="bg wow animate__animated animate__bounceInUp">
+    <div class="wrapper">
+        <div class="testimonials">
+            <div class="title">
+                <h4>TESTIMONIALS</h4>
+                <h2>Our Successful Students</h2>
+            </div>
+
+            <div class="swiper-container mySwiper">
+                <div class="swiper-wrapper">
+                    {% for item in alltesto  %}
+                    <div class="swiper-slide">
+                        <div class="item">
+                            <div class="image" style="background-image: url({{item.image.url}})"></div>
+                            <div class="details">
+                                <h3 class="name">{{item.fullname}}</h3>
+                                <h4>{{item.designation}}</h4>
+
+                                <div class="desc">
+                                    <div class="quet-start">
+                                        <img src="{% static 'frontend/images/icons/bx_bxs-quote-alt-left.svg' %}" alt="" />
+                                    </div>
+                                    <p>
+                                        Nepal National Social Welfare Association (NNSWA) has
+                                        been partnering with NLR (Netherlands Leprosy Relief)
+                                        since 2010 to implement the Disability Inclusive
+                                        Development program in Kailali,....
+                                    </p>
+                                    <div class="quet-end">
+                                        <img src="{% static 'frontend/images/icons/bx_bxs-quote-alt-left.svg' %}" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,49 @@
+{% load static %}
+<section class="wow animate__animated animate__bounceInUp">
+  <div class="gallery grid-gallery">
+    <div class="title">
+      <h4>GALLERY</h4>
+      <h2>NLR NGO Gallery</h2>
+    </div>
+
+    <ul class="switch-btn">
+      <li class="active" data-filters="data-news">Images</li>
+      <li data-filters="data-event">Videos</li>
+    </ul>
+
+    <div class="images-list">
+      {% for item in imagecategory %}
+      <div class="item">
+        <div class="image" style="background-image: url( {{item.image.url}} )"></div>
+
+        <div id="galleryBtn" class="name">{{item.title}}</div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+<div class="gallery-popup">
+  <div class="gallery-bg"></div>
+  <div class="close-gallery-btn">
+    <img src="{% static 'frontend/images/icons/close_big_light.svg' %}" alt="" />
+  </div>
+  
+  {% for item in imagecategory %}
+  <div class="title">{{item.title}}</div>
+  <div class="gallery-images">
+    <div class="swiper-container mySwiper">
+      <div class="swiper-wrapper">
+          {% for itemimg in gallerys %}
+              {% if itemimg.category.title == item.title %}
+                  <div class="swiper-slide" style="background-image: url({{itemimg.image.url}})"></div>
+              {% endif %}
+          {% endfor %}
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
